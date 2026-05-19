@@ -1,0 +1,92 @@
+
+
+<div class="booking-page">
+
+  @if (loading()) {
+    <div class="loading">Loading room details...</div>
+  }
+
+  @if (successMessage()) {
+    <div class="success-box">
+      <h2>Booking Confirmed!</h2>
+      <p>{{ successMessage() }}</p>
+      <button (click)="goBack()" class="btn-primary">Browse More Rooms</button>
+    </div>
+  }
+
+  @if (!loading() && !successMessage()) {
+    <div class="booking-layout">
+      @if (room(); as currentRoom) {
+        <div class="room-summary">
+          <img [src]="currentRoom.imageUrl" [alt]="currentRoom.name" />
+          <div class="room-details">
+            <h3>{{ currentRoom.name }}</h3>
+            <span class="room-type">{{ currentRoom.type }}</span>
+            <p>{{ currentRoom.description }}</p>
+            <p class="price"><strong>${{ currentRoom.price }}</strong> / night</p>
+          </div>
+          <button (click)="goBack()" class="btn-back">← Back to Rooms</button>
+        </div>
+      }
+
+      <div class="booking-form">
+        <h2>Complete Your Booking</h2>
+
+        @if (errorMessage()) {
+          <div class="error">{{ errorMessage() }}</div>
+        }
+
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input
+            id="name"
+            type="text"
+            [value]="booking().name"
+            (input)="onBookingChange('name', $any($event).target.value)"
+            placeholder="John Doe"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input
+            id="email"
+            type="email"
+            [value]="booking().email"
+            (input)="onBookingChange('email', $any($event).target.value)"
+            placeholder="john@example.com"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="checkin">Check-In Date</label>
+          <input
+            id="checkin"
+            type="date"
+            [value]="booking().checkIn"
+            (input)="onBookingChange('checkIn', $any($event).target.value)"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="checkout">Check-Out Date</label>
+          <input
+            id="checkout"
+            type="date"
+            [value]="booking().checkOut"
+            (input)="onBookingChange('checkOut', $any($event).target.value)"
+          />
+        </div>
+
+        <button
+          (click)="submitBooking()"
+          [disabled]="submitting()"
+          class="btn-confirm"
+        >
+          {{ submitting() ? 'Confirming...' : 'Confirm Booking' }}
+        </button>
+      </div>
+    </div>
+  }
+
+</div>

@@ -1,0 +1,179 @@
+.booking-page {
+  padding: 40px;
+  padding-top: 100px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.btn-back {
+  background: #1f1c1a;
+  border: 1px solid #1f1c1a;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #ffffff;
+  margin-top: 16px;
+  font-size: 0.95rem;
+  width: 100%;
+  text-align: left;
+}
+
+.btn-back:hover {
+  background: #0d0c0c;
+}
+
+
+.booking-layout {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+
+.room-summary {
+  flex: 1;
+  min-width: 260px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.1);
+  background: white;
+  align-self: flex-start;
+}
+
+.room-summary img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.room-details {
+  padding: 20px;
+}
+
+.room-details h3 {
+  font-size: 1.2rem;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+.room-type {
+  background: #e8f4fd;
+  color: #2980b9;
+  font-size: 0.8rem;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.room-details p {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.price {
+  font-size: 1.1rem !important;
+  color: #1a1a2e !important;
+  margin-top: 12px !important;
+}
+
+
+.booking-form {
+  flex: 1;
+  min-width: 300px;
+}
+
+.booking-form h2 {
+  font-size: 1.6rem;
+  color: #000;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #000;
+  font-size: 0.95rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #1f1c1a;
+}
+
+.btn-confirm {
+  width: 100%;
+  padding: 14px;
+  background-color: #1f1c1a;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+
+.btn-confirm:hover:not(:disabled) {
+  background-color: #0d0c0c;
+}
+
+.btn-confirm:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+
+.success-box {
+  text-align: center;
+  padding: 50px 40px;
+  background: #f0fff4;
+  border: 1px solid #68d391;
+  border-radius: 12px;
+}
+
+.success-box h2 {
+  color: #276749;
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+.success-box p {
+  color: #555;
+  font-size: 1.05rem;
+  margin-bottom: 24px;
+}
+
+.btn-primary {
+  background-color: #1f1c1a;
+  color: #ffffff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.loading, .error {
+  padding: 20px;
+  font-size: 1rem;
+  color: #e74c3c;
+}

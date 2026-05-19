@@ -1,0 +1,74 @@
+
+<nav class="navbar" [class.navbar-scrolled]="isNavbarScrolled">
+  <div class="nav-container">
+    <div class="logo">DESTINY</div>
+    <ul class="nav-links">
+      <li><a href="#hero" (click)="scrollTo('hero'); $event.preventDefault()">Home</a></li>
+      <li><a href="#intro" (click)="scrollTo('intro'); $event.preventDefault()">Hotel</a></li>
+      <li><a href="#rooms" (click)="scrollTo('rooms'); $event.preventDefault()">Rooms</a></li>
+      <li><a href="#amenities" (click)="scrollTo('amenities'); $event.preventDefault()">Amenities</a></li>
+      <li><a href="#gallery" (click)="scrollTo('gallery'); $event.preventDefault()">Gallery</a></li>
+      <li><a routerLink="/rooms" class="book-btn">Book</a></li>
+    </ul>
+    <button class="mobile-menu" (click)="toggleMobileMenu()">☰</button>
+  </div>
+
+  <div class="mobile-nav" *ngIf="mobileMenuOpen">
+    <ul>
+      <li><a href="#hero" (click)="scrollTo('hero'); mobileMenuOpen=false; $event.preventDefault()">Home</a></li>
+      <li><a href="#intro" (click)="scrollTo('intro'); mobileMenuOpen=false; $event.preventDefault()">Hotel</a></li>
+      <li><a href="#rooms" (click)="scrollTo('rooms'); mobileMenuOpen=false; $event.preventDefault()">Rooms</a></li>
+      <li><a href="#" (click)="scrollTo('amenities'); mobileMenuOpen=false; $event.preventDefault()">Amenities</a></li>
+      <li><a href="#" (click)="scrollTo('gallery'); mobileMenuOpen=false; $event.preventDefault()">Gallery</a></li>
+      <li><a routerLink="/rooms" (click)="mobileMenuOpen=false" class="book-btn">Book</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">DESTINY</div>
+        <p>Tirana, Albania</p>
+        <p>T +355 4 2233 0000</p>
+        <p>reservations@destinytirana.com</p>
+      </div>
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <ul>
+          <li><a routerLink="/rooms">Rooms</a></li>
+          <li><a routerLink="/offers">Offers</a></li>
+          <li><a routerLink="/gallery">Gallery</a></li>
+          <li><a routerLink="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Terms of use</a></li>
+          <li><a href="#">Cookie settings</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Stay inspired</h4>
+        <p>Receive our occasional journal with offers and stories.</p>
+        <form >
+          <input type="email" placeholder="Email address" aria-label="Newsletter email">
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© Destiny Hotel — Luxury hospitality in Tirana</p>
+    </div>
+  </div>
+</footer>
